@@ -7,6 +7,94 @@
     <title>Contacto - Electricidad Tayllefert</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para el formulario mejorado */
+        #contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 25px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        #form-message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        #contact-form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        
+        #contact-form input,
+        #contact-form select,
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        #contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        #contact-form button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        #contact-form button:hover {
+            background-color: #c50000;
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .g-recaptcha {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,7 +112,11 @@
     <main>
         <section id="contacto">
             <h2>Contacto</h2>
-            <form id="contact-form" action="mailto:electricidad-tayllefert@hotmail.com" method="post" enctype="text/plain">
+            <div id="form-message" class="form-message"></div>
+            
+            <form id="contact-form" action="procesar-formulario.php" method="post">
+                <input type="hidden" name="destinatario" value="electricidad-tayllefert@hotmail.com">
+                
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required aria-label="Tu nombre completo">
                 
@@ -37,16 +129,18 @@
                 <label for="asunto">Asunto:</label>
                 <select id="asunto" name="asunto" required>
                     <option value="" disabled selected>Selecciona un asunto</option>
-                    <option value="consulta">Consulta general</option>
-                    <option value="presupuesto">Solicitud de presupuesto</option>
-                    <option value="urgencia">Servicio de urgencia</option>
-                    <option value="otro">Otro</option>
+                    <option value="Consulta general">Consulta general</option>
+                    <option value="Solicitud de presupuesto">Solicitud de presupuesto</option>
+                    <option value="Servicio de urgencia">Servicio de urgencia</option>
+                    <option value="Otro">Otro</option>
                 </select>
                 
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required aria-label="Tu mensaje"></textarea>
                 
-                <button type="submit">Enviar Mensaje</button>
+                <div class="g-recaptcha" data-sitekey="6LcIAwIrAAAAAGQnlsVueuYEOvjbnGNfY_--_sp0"></div>
+                
+                <button type="submit" id="submit-btn">Enviar Mensaje</button>
             </form>
         </section>
 
@@ -128,43 +222,9 @@
                 </p>
             </div>
         </div>
-        
-        <script>
-            // Año actual automático
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            document.getElementById('current-year-2').textContent = new Date().getFullYear();
-        </script>
     </footer>
 
-    <script>
-        // Año actual automático
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('current-year-2').textContent = new Date().getFullYear();
-        
-        // Validación del formulario
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            const telefono = document.getElementById('telefono').value;
-            if (telefono && !/^[0-9+ ]{9,15}$/.test(telefono)) {
-                alert('Por favor ingrese un número de teléfono válido');
-                e.preventDefault();
-            }
-        });
-    </script>
-        <script>
-            // Año actual en el footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Smooth scrolling para enlaces internos
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        </script>
-        <!-- Banner de Cookies - Colocar antes del cierre </body> -->
+    <!-- Banner de Cookies -->
     <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
         <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
             <div style="flex: 1; min-width: 250px; text-align: left;">
@@ -214,129 +274,113 @@
             </div>
         </div>
     </div>
-    
-    <style>
-        /* Estilos para el interruptor de cookies */
-        .cookie-switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-        }
-        
-        .cookie-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .cookie-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 24px;
-        }
-        
-        .cookie-slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        
-        input:checked + .cookie-slider {
-            background-color: #e60000;
-        }
-        
-        input:checked + .cookie-slider:before {
-            transform: translateX(26px);
-        }
-    </style>
-        <script>
-            // Año actual en el footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Smooth scrolling para enlaces internos
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        </script>
- <script>
-    // Función para mostrar el banner de cookies
-    function showCookieBanner() {
-        const banner = document.getElementById('cookie-consent-banner');
-        const settingsPanel = document.getElementById('cookie-settings-panel');
-        
-        // Verificar si ya hay preferencias guardadas
-        if (!localStorage.getItem('cookiePreferences')) {
-            banner.style.display = 'block';
-        }
-        
-        // Configurar eventos de los botones
-        document.getElementById('cookie-accept-all').addEventListener('click', function() {
-            localStorage.setItem('cookiePreferences', 'all');
-            banner.style.display = 'none';
-            // Aquí podrías cargar todos los scripts de tracking
-        });
-        
-        document.getElementById('cookie-settings-btn').addEventListener('click', function() {
-            banner.style.display = 'none';
-            settingsPanel.style.display = 'block';
-        });
-        
-        document.getElementById('cookie-settings-save').addEventListener('click', function() {
-            const analyticsChecked = document.getElementById('analytics-cookies-toggle').checked;
-            const preferences = {
-                necessary: true,
-                analytics: analyticsChecked
-            };
-            localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
-            settingsPanel.style.display = 'none';
-            
-            // Cargar scripts según preferencias
-            if (analyticsChecked) {
-                // Cargar Google Analytics u otros scripts de análisis
-            }
-        });
-        
-        document.getElementById('cookie-settings-cancel').addEventListener('click', function() {
-            settingsPanel.style.display = 'none';
-            banner.style.display = 'block';
-        });
-    }
-    
-    // Ejecutar cuando el DOM esté cargado
-    document.addEventListener('DOMContentLoaded', function() {
-        showCookieBanner();
-        
-        // Año actual en el footer
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        // Año actual automático
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('current-year-2').textContent = new Date().getFullYear();
         
-        // Validación del formulario
+        // Función para mostrar mensajes
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = message;
+            messageDiv.className = 'form-message ' + type + '-message';
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Manejo del formulario
         document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando <span class="loader"></span>';
+            
+            // Validación básica
             const telefono = document.getElementById('telefono').value;
             if (telefono && !/^[0-9+ ]{9,15}$/.test(telefono)) {
-                alert('Por favor ingrese un número de teléfono válido');
-                e.preventDefault();
+                showMessage('Por favor ingrese un número de teléfono válido', 'error');
+                btn.disabled = false;
+                btn.innerHTML = 'Enviar Mensaje';
+                return;
             }
+            
+            if (grecaptcha.getResponse().length === 0) {
+                showMessage('Por favor complete la verificación reCAPTCHA', 'error');
+                btn.disabled = false;
+                btn.innerHTML = 'Enviar Mensaje';
+                return;
+            }
+            
+            // Envío del formulario
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) return response.text();
+                throw new Error('Error en el envío');
+            })
+            .then(data => {
+                showMessage('Mensaje enviado con éxito. Nos pondremos en contacto pronto.', 'success');
+                document.getElementById('contact-form').reset();
+                grecaptcha.reset();
+            })
+            .catch(error => {
+                showMessage('Error al enviar el mensaje. Por favor intente nuevamente.', 'error');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerHTML = 'Enviar Mensaje';
+            });
         });
-    });
-</script>
+        
+        // Gestión de cookies
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const settingsPanel = document.getElementById('cookie-settings-panel');
+            
+            if (!localStorage.getItem('cookiePreferences')) {
+                banner.style.display = 'block';
+            }
+            
+            document.getElementById('cookie-accept-all').addEventListener('click', function() {
+                localStorage.setItem('cookiePreferences', 'all');
+                banner.style.display = 'none';
+            });
+            
+            document.getElementById('cookie-settings-btn').addEventListener('click', function() {
+                banner.style.display = 'none';
+                settingsPanel.style.display = 'block';
+            });
+            
+            document.getElementById('cookie-settings-save').addEventListener('click', function() {
+                const analyticsChecked = document.getElementById('analytics-cookies-toggle').checked;
+                const preferences = {
+                    necessary: true,
+                    analytics: analyticsChecked
+                };
+                localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                settingsPanel.style.display = 'none';
+            });
+            
+            document.getElementById('cookie-settings-cancel').addEventListener('click', function() {
+                settingsPanel.style.display = 'none';
+                banner.style.display = 'block';
+            });
+        }
+        
+        // Inicialización cuando el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            showCookieBanner();
+        });
+    </script>
 </body>
 </html>
