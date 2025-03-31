@@ -346,3 +346,95 @@ footer {
         height: 180px;
     }
 }
+/* ===== CARRUSEL HORIZONTAL COMPACTO ===== */
+#proyectos {
+    padding: 20px 0;
+    margin: 30px 0;
+    overflow-x: auto;
+    overflow-y: hidden; /* Oculta scroll vertical */
+    white-space: nowrap; /* Mantiene todo en una línea */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: #e60000 rgba(0,0,0,0.1); /* Color del scroll */
+}
+
+.galeria-proyectos {
+    display: inline-block; /* Fundamental para el scroll horizontal */
+    padding: 0 15px; /* Espacio a los lados */
+}
+
+.proyectos {
+    display: inline-block; /* Elementos en línea */
+    width: 280px; /* Más ancho que alto */
+    height: 160px; /* Altura reducida */
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    margin-right: 20px; /* Espacio entre elementos */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    vertical-align: top; /* Alinea correctamente los elementos */
+    position: relative;
+}
+
+.proyectos:last-child {
+    margin-right: 0; /* Elimina margen del último elemento */
+}
+
+.proyectos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el espacio manteniendo proporciones */
+    transition: transform 0.5s ease;
+}
+
+.proyectos h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(230, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.proyectos:hover {
+    transform: scale(1.03);
+}
+
+.proyectos:hover h3 {
+    transform: translateY(0);
+}
+
+/* Scrollbar personalizada */
+#proyectos::-webkit-scrollbar {
+    height: 6px;
+}
+
+#proyectos::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+
+#proyectos::-webkit-scrollbar-thumb {
+    background: #e60000;
+    border-radius: 3px;
+}
+
+/* Responsive: Más compacto en móviles */
+@media (max-width: 768px) {
+    .proyectos {
+        width: 220px;
+        height: 130px;
+        margin-right: 15px;
+    }
+    
+    .proyectos h3 {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}
