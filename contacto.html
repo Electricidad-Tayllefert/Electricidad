@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contacta con Electricidad Tayllefert - Servicios eléctricos profesionales">
     <title>Contacto - Electricidad Tayllefert</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/Logo.png">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos específicos para el formulario mejorado */
@@ -94,12 +94,71 @@
         .g-recaptcha {
             margin: 20px 0;
         }
+
+        /* NUEVOS ESTILOS PARA BOTONES HORIZONTALES */
+        .contacto-rapido {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .boton-contacto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            width: 160px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .boton-contacto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .boton-contacto img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            object-fit: contain;
+        }
+
+        .boton-contacto span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .contacto-rapido {
+                gap: 10px;
+            }
+            
+            .boton-contacto {
+                width: calc(50% - 20px);
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .boton-contacto {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/logo1.png" alt="Electricidad Tayllefert" class="logo">
-        <h1>Electricidad Tayllefert</h1>
+        <img src="images/Logo2.png" alt="Electricidad Tayllefert" class="logo">
         
         <nav>
             <ul>
@@ -114,67 +173,63 @@
             <h2>Contacto</h2>
             <div id="form-message" class="form-message"></div>
             
-<form id="contact-form" action="https://formsubmit.co/electricidad-tayllefert@hotmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://electricidad-tayllefert.github.io/Electricidad/gracias.html">
-    <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
-    <input type="hidden" name="_captcha" value="false">
-    
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="telefono">Teléfono (opcional):</label>
-    <input type="tel" id="telefono" name="telefono">
-    
-    <label for="asunto">Asunto:</label>
-    <select id="asunto" name="asunto" required>
-        <option value="" disabled selected>Selecciona un asunto</option>
-        <option value="Consulta general">Consulta general</option>
-        <option value="Solicitud de presupuesto">Solicitud de presupuesto</option>
-        <option value="Servicio de urgencia">Servicio de urgencia</option>
-        <option value="Otro">Otro</option>
-    </select>
-    
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" required></textarea>
-    
-    <div class="g-recaptcha" data-sitekey="6LcIAwIrAAAAAGQnlsVueuYEOvjbnGNfY_--_sp0"></div>
-    
-    <button type="submit">Enviar Mensaje</button>
-</form>
+            <form id="contact-form" action="procesar-formulario.php" method="post">
+                <input type="hidden" name="destinatario" value="electricidad-tayllefert@hotmail.com">
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required aria-label="Tu nombre completo">
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required aria-label="Tu correo electrónico">
+                
+                <label for="telefono">Teléfono (opcional):</label>
+                <input type="tel" id="telefono" name="telefono" aria-label="Tu número de teléfono">
+                
+                <label for="asunto">Asunto:</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="" disabled selected>Selecciona un asunto</option>
+                    <option value="Consulta general">Consulta general</option>
+                    <option value="Solicitud de presupuesto">Solicitud de presupuesto</option>
+                    <option value="Servicio de urgencia">Servicio de urgencia</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required aria-label="Tu mensaje"></textarea>
+                
+                <div class="g-recaptcha" data-sitekey="6LcIAwIrAAAAAGQnlsVueuYEOvjbnGNfY_--_sp0"></div>
+                
+                <button type="submit" id="submit-btn">Enviar Mensaje</button>
+            </form>
         </section>
 
-        <section id="contacto-adicional">
-            <h3>Otras formas de contacto</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <a href="https://wa.me/34655941737" target="_blank" rel="noopener noreferrer">
-                        <img src="images/whatsapp-icon.png" alt="WhatsApp" loading="lazy">
-                        <p>WhatsApp: +34 655 941 737</p>
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <a href="mailto:electricidad-tayllefert@hotmail.com">
-                        <img src="images/email-icon.png" alt="Correo Electrónico" loading="lazy">
-                        <p>Email: electricidad-tayllefert@hotmail.com</p>
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <a href="https://g.page/electricidad-tayllefert?share" target="_blank" rel="noopener noreferrer">
-                        <img src="images/google-icon.png" alt="Google Maps" loading="lazy">
-                        <p>Visítanos - Ver en Google Maps</p>
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <a href="tel:+34655941737">
-                        <img src="images/phone-icon.png" alt="Teléfono" loading="lazy">
-                        <p>Llámanos: +34 655 941 737</p>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <!-- SECCIÓN DE BOTONES HORIZONTALES -->
+        <div class="contacto-rapido">
+            <a href="https://wa.me/34655941737" class="boton-contacto" target="_blank" rel="noopener noreferrer">
+                <img src="images/whatsapp-icon.png" alt="WhatsApp">
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="mailto:electricidad-tayllefert@hotmail.com" class="boton-contacto">
+                <img src="images/email-icon.png" alt="Email">
+                <span>Email</span>
+            </a>
+            
+            <a href="https://g.page/electricidad-tayllefert?share" class="boton-contacto" target="_blank" rel="noopener noreferrer">
+                <img src="images/google-icon.png" alt="Google Maps">
+                <span>Google Maps</span>
+            </a>
+            
+            <a href="tel:+34655941737" class="boton-contacto">
+                <img src="images/phone-icon.png" alt="Teléfono">
+                <span>Llamar</span>
+            </a>
+
+            <a href="https://g.page/r/CddtGCKO_r5LEBM/review" class="boton-contacto">
+                <img src="images/estrella.png" alt="Valoranos">
+                <span>Valoranos</span>
+            </a>
+        </div>
     </main>
 
     <footer style="background-color: #222; color: #fff; padding: 40px 0 20px; font-size: 0.9em;">
@@ -190,6 +245,7 @@
                     <p style="margin-bottom: 8px;">📞 <a href="tel:+34655941737" style="color: #fff; text-decoration: none;">+34 655 941 737</a></p>
                     <p style="margin-bottom: 8px;">📧 <a href="mailto:electricidad-tayllefert@hotmail.com" style="color: #fff; text-decoration: none;">electricidad-tayllefert@hotmail.com</a></p>
                     <p style="margin-bottom: 8px;">📍 C. Chucena, 3, 21005 Huelva</p>
+                    <p style="margin-bottom: 8px;">⭐ <a href="https://g.page/r/CddtGCKO_r5LEBM/review" style="color: #fff; text-decoration: none;">Valoranos</a></p>
                 </div>
                 
                 <div style="flex: 1; min-width: 250px;">
