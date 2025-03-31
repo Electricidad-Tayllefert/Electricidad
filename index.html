@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Electricidad Tayllefert - Servicios profesionales de instalación, reparación y mantenimiento eléctrico">
+    <meta name="description"
+        content="Electricidad Tayllefert - Servicios profesionales de instalación, reparación y mantenimiento eléctrico">
     <title>Electricidad Tayllefert - Servicios Eléctricos Profesionales</title>
-<link rel="icon" href="logo.ico" type="x-icon">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <script>
+        // Protección avanzada contra descargas
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Bloquear clic derecho
+            document.oncontextmenu = function () {
+                alert('Las imagenes tienen derechos de autor y no se pueden descargar');
+                return false;
+            };
+
+            // 2. Bloquear arrastre de imágenes
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onmousedown = function () { return false; };
+                img.ondragstart = function () { return false; };
+            });
+
+            // 3. Desactivar teclas de acceso rápido
+            document.onkeydown = function (e) {
+                // Bloquear Ctrl+Shift+I, Ctrl+U, F12
+                if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 73) || e.keyCode === 123) {
+                    alert('Acceso denegado');
+                    return false;
+                }
+            };
+
+            // 4. Protección adicional para imágenes
+            document.body.style.userSelect = 'none';
+            document.body.style.webkitUserSelect = 'none';
+        });
+    </script>
     <header>
         <img src="images/Logo2.png" alt="Electricidad Tayllefert" class="logo">
-        
+
         <nav>
             <ul>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#trabajos">Nuestros Trabajos</a></li>
+                <li><a href="#proyectos">Proyectos Recientes</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -28,105 +61,125 @@
                 <div class="servicio">
                     <img src="images/icono-instalacion.jpg" alt="Instalaciones Eléctricas" loading="lazy">
                     <h3>Instalaciones Eléctricas</h3>
-                    <p>Realizamos instalaciones eléctricas completas para viviendas, comercios y empresas, adaptándonos a tus necesidades con soluciones personalizadas y seguras.</p>
+                    <p>Realizamos instalaciones eléctricas completas para viviendas, comercios y empresas, adaptándonos
+                        a tus necesidades con soluciones personalizadas y seguras.</p>
                 </div>
                 <div class="servicio">
                     <img src="images/icono-averias.jpg" alt="Reparación de Averías" loading="lazy">
                     <h3>Reparación de Averías</h3>
-                    <p>Solucionamos cualquier tipo de avería eléctrica con rapidez y profesionalismo, garantizando tu seguridad y tranquilidad con un servicio excepcional.</p>
+                    <p>Solucionamos cualquier tipo de avería eléctrica con rapidez y profesionalismo, garantizando tu
+                        seguridad y tranquilidad con un servicio excepcional.</p>
                 </div>
                 <div class="servicio">
                     <img src="images/icono-mantenimiento.jpg" alt="Mantenimiento Eléctrico" loading="lazy">
                     <h3>Mantenimiento Eléctrico</h3>
-                    <p>Ofrecemos servicios de mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento y seguridad de tus instalaciones eléctricas.</p>
+                    <p>Ofrecemos servicios de mantenimiento preventivo y correctivo para garantizar el óptimo
+                        funcionamiento y seguridad de tus instalaciones eléctricas.</p>
                 </div>
             </div>
 
-            <br>
-        <div class="servicios-container vertical">
-            <div class="servicio">
-                <img src="images/icono-instalacion.jpg" alt="Instalaciones Eléctricas" loading="lazy">
-                <h3>Instalaciones Eléctricas</h3>
-                <p>Realizamos instalaciones eléctricas completas para viviendas, comercios y empresas, adaptándonos a tus necesidades con soluciones personalizadas y seguras.</p>
-            </div>
-            <div class="servicio">
-                <img src="images/icono-averias.jpg" alt="Reparación de Averías" loading="lazy">
-                <h3>Reparación de Averías</h3>
-                <p>Solucionamos cualquier tipo de avería eléctrica con rapidez y profesionalismo, garantizando tu seguridad y tranquilidad con un servicio excepcional.</p>
-            </div>
-            <div class="servicio">
-                <img src="images/icono-mantenimiento.jpg" alt="Mantenimiento Eléctrico" loading="lazy">
-                <h3>Mantenimiento Eléctrico</h3>
-                <p>Ofrecemos servicios de mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento y seguridad de tus instalaciones eléctricas.</p>
-            </div>
-        </div>
+        </section>
 
 
-
-    </section>
-        <section id="trabajos">
-            <h2>Nuestros Trabajos</h2>
-            <div class="galeria-trabajos">
-                <!-- Ejemplo de imágenes de trabajos - puedes añadir más -->
-                <div class="trabajo">
-                    <img src="images/trabajo1.jpg" alt="Trabajo eléctrico realizado" loading="lazy">
-                    <p>Instalación eléctrica completa en vivienda</p>
+        <section id="proyectos">
+            <h2>Nuestros Proyectos Recientes</h2>
+            <div class="galeria-proyectos">
+                <div class="proyectos">
+                    <a href="growersgo.html">
+                        <img src="images/growersgo.jpg" alt="Growers Go" loading="lazy">
+                    </a>
+                    <h3>Instalación Profesional de Iluminación y Cableado – GrowersGo</h3>
                 </div>
-                <div class="trabajo">
-                    <img src="images/trabajo2.jpg" alt="Trabajo eléctrico realizado" loading="lazy">
-                    <p>Cuadro eléctrico modernizado</p>
+                
+                <!-- Se pueden añadir más proyectos aquí -->
+            </div>
+            <div class="galeria-proyectos">
+                <div class="proyectos">
+                    <a href="growersgo.html">
+                        <img src="images/growersgo.jpg" alt="Growers Go" loading="lazy">
+                    </a>
+                    <h3>Instalación Profesional de Iluminación y Cableado – GrowersGo</h3>
                 </div>
-                <div class="trabajo">
-                    <img src="images/trabajo3.jpg" alt="Trabajo eléctrico realizado" loading="lazy">
-                    <p>Iluminación exterior profesional</p>
+                
+                <!-- Se pueden añadir más proyectos aquí -->
+            </div>
+            <div class="galeria-proyectos">
+                <div class="proyectos">
+                    <a href="growersgo.html">
+                        <img src="images/growersgo.jpg" alt="Growers Go" loading="lazy">
+                    </a>
+                    <h3>Instalación Profesional de Iluminación y Cableado – GrowersGo</h3>
                 </div>
-                <!-- Espacio para añadir más imágenes según necesites -->
+                
+                <!-- Se pueden añadir más proyectos aquí -->
+            </div>
+            <div class="galeria-proyectos">
+                <div class="proyectos">
+                    <a href="growersgo.html">
+                        <img src="images/growersgo.jpg" alt="Growers Go" loading="lazy">
+                    </a>
+                    <h3>Instalación Profesional de Iluminación y Cableado – GrowersGo</h3>
+                </div>
+                
+                <!-- Se pueden añadir más proyectos aquí -->
             </div>
         </section>
     </main>
 
     <footer style="background-color: #222; color: #fff; padding: 40px 0 20px; font-size: 0.9em;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 30px;">
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 30px;">
                 <div style="flex: 1; min-width: 250px;">
                     <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Electricidad Tayllefert</h3>
-                    <p style="line-height: 1.6;">Servicios profesionales de instalaciones eléctricas, reparaciones y mantenimiento para hogares y empresas.</p>
+                    <p style="line-height: 1.6;">Servicios profesionales de instalaciones eléctricas, reparaciones y
+                        mantenimiento para hogares y empresas.</p>
                 </div>
-                
+
                 <div style="flex: 1; min-width: 250px;">
                     <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Contacto</h3>
-                    <p style="margin-bottom: 8px;">📞 <a href="tel:+34655941737" style="color: #fff; text-decoration: none;">+34 655 941 737</a></p>
-                    <p style="margin-bottom: 8px;">📧 <a href="mailto:electricidad-tayllefert@hotmail.com" style="color: #fff; text-decoration: none;">electricidad-tayllefert@hotmail.com</a></p>
+                    <p style="margin-bottom: 8px;">📞 <a href="tel:+34655941737"
+                            style="color: #fff; text-decoration: none;">+34 655 941 737</a></p>
+                    <p style="margin-bottom: 8px;">📧 <a href="mailto:electricidad-tayllefert@hotmail.com"
+                            style="color: #fff; text-decoration: none;">electricidad-tayllefert@hotmail.com</a></p>
                     <p style="margin-bottom: 8px;">📍 C. Chucena, 3, 21005 Huelva</p>
-                    <p style="margin-bottom: 8px;">⭐ <a href="https://g.page/r/CddtGCKO_r5LEBM/review" style="color: #fff; text-decoration: none;">Valoranos</a></p>
+                    <p style="margin-bottom: 8px;">⭐ <a href="https://g.page/r/CddtGCKO_r5LEBM/review"
+                            style="color: #fff; text-decoration: none;">Valóranos</a></p>
 
                 </div>
-                
+
                 <div style="flex: 1; min-width: 250px;">
                     <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Horario</h3>
                     <p style="margin-bottom: 8px;">Lunes a Viernes: 8:00 - 20:00</p>
-                    <p style="margin-bottom: 8px;">Sábados: 9:00 - 14:00</p>
                 </div>
-                
+
                 <div style="flex: 1; min-width: 250px;">
                     <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Legal</h3>
                     <ul style="list-style: none; padding: 0; line-height: 1.6;">
-                        <li><a href="politicas-privacidad.html" style="color: #fff; text-decoration: none;">Política de Privacidad</a></li>
+                        <li><a href="politicas-privacidad.html" style="color: #fff; text-decoration: none;">Política de
+                                Privacidad</a></li>
                         <li><a href="aviso-legal.html" style="color: #fff; text-decoration: none;">Aviso Legal</a></li>
-                        <li><a href="cookies.html" style="color: #fff; text-decoration: none;">Política de Cookies</a></li>
-                        <li><a href="terminos-servicio.html" style="color: #fff; text-decoration: none;">Términos de Servicio</a></li>
+                        <li><a href="cookies.html" style="color: #fff; text-decoration: none;">Política de Cookies</a>
+                        </li>
+                        <li><a href="terminos-servicio.html" style="color: #fff; text-decoration: none;">Términos de
+                                Servicio</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
-                <p style="margin-bottom: 15px;">&copy; <span id="current-year"></span> Electricidad Tayllefert - Todos los derechos reservados</p>
-                
+                <p style="margin-bottom: 15px;">&copy; <span id="current-year"></span> Electricidad Tayllefert - Todos
+                    los derechos reservados</p>
+
                 <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
-                    <a href="https://wa.me/34655941737" style="color: #fff; font-size: 1.5em;" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
-                    <a href="https://g.page/electricidad-tayllefert?share" style="color: #fff; font-size: 1.5em;" aria-label="Google Maps" target="_blank" rel="noopener">📍</a>
+                    <a href="https://wa.me/34655941737" style="color: #fff; font-size: 1.5em;" aria-label="WhatsApp"
+                        target="_blank" rel="noopener">💬</a>
+                    <a href="https://g.page/electricidad-tayllefert?share" style="color: #fff; font-size: 1.5em;"
+                        aria-label="Google Maps" target="_blank" rel="noopener">📍</a>
+                        <a href="https://g.page/r/CddtGCKO_r5LEBM/review" style="color: #fff; font-size: 1.5em;"
+                        aria-label="Valóranos" target="_blank" rel="noopener">⭐</a>
                 </div>
-                
+
                 <p style="font-size: 0.8em; color: #aaa; max-width: 800px; margin: 0 auto;">
                     Electricidad Tayllefert © <span id="current-year-2"></span> es una empresa registrada en Huelva con
                     certificados y seguros conforme a la legislación vigente.
@@ -136,35 +189,46 @@
     </footer>
 
     <!-- Banner de Cookies -->
-    <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
-        <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
+    <div id="cookie-consent-banner"
+        style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
+        <div
+            style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
             <div style="flex: 1; min-width: 250px; text-align: left;">
-                <p style="margin: 0;">Utilizamos cookies esenciales y de análisis para mejorar nuestro sitio web. Al continuar navegando, aceptas su uso.</p>
+                <p style="margin: 0;">Utilizamos cookies esenciales y de análisis para mejorar nuestro sitio web. Al
+                    continuar navegando, aceptas su uso.</p>
             </div>
             <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                <button id="cookie-accept-all" style="background-color: #e60000; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Aceptar todas</button>
-                <button id="cookie-settings-btn" style="background-color: #555; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Configurar</button>
-                <a href="cookies.html" style="color: #e60000; text-decoration: none; padding: 8px 20px; white-space: nowrap;">Más información</a>
+                <button id="cookie-accept-all"
+                    style="background-color: #e60000; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Aceptar
+                    todas</button>
+                <button id="cookie-settings-btn"
+                    style="background-color: #555; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Configurar</button>
+                <a href="cookies.html"
+                    style="color: #e60000; text-decoration: none; padding: 8px 20px; white-space: nowrap;">Más
+                    información</a>
             </div>
         </div>
     </div>
-    
+
     <!-- Panel de Configuración de Cookies -->
-    <div id="cookie-settings-panel" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #f5f5f5; color: #333; padding: 20px; z-index: 10000; max-height: 80vh; overflow-y: auto; box-shadow: 0 -2px 15px rgba(0,0,0,0.3);">
+    <div id="cookie-settings-panel"
+        style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #f5f5f5; color: #333; padding: 20px; z-index: 10000; max-height: 80vh; overflow-y: auto; box-shadow: 0 -2px 15px rgba(0,0,0,0.3);">
         <div style="max-width: 800px; margin: 0 auto;">
             <h3 style="color: #e60000; margin-bottom: 20px; text-align: center;">Configuración de Cookies</h3>
-            
+
             <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
                         <strong style="display: block;">Cookies técnicas</strong>
                         <small style="color: #666;">Siempre activas</small>
                     </div>
-                    <span style="background-color: #e60000; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em;">Obligatorias</span>
+                    <span
+                        style="background-color: #e60000; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em;">Obligatorias</span>
                 </div>
-                <p style="font-size: 0.9em; color: #666; margin: 0;">Estas cookies son necesarias para el funcionamiento básico del sitio web.</p>
+                <p style="font-size: 0.9em; color: #666; margin: 0;">Estas cookies son necesarias para el funcionamiento
+                    básico del sitio web.</p>
             </div>
-            
+
             <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
@@ -176,12 +240,16 @@
                         <span class="cookie-slider"></span>
                     </label>
                 </div>
-                <p style="font-size: 0.9em; color: #666; margin: 0;">Nos ayudan a entender cómo interactúan los usuarios con nuestro sitio web.</p>
+                <p style="font-size: 0.9em; color: #666; margin: 0;">Nos ayudan a entender cómo interactúan los usuarios
+                    con nuestro sitio web.</p>
             </div>
-            
+
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <button id="cookie-settings-save" style="background-color: #e60000; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Guardar preferencias</button>
-                <button id="cookie-settings-cancel" style="background-color: #555; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Cancelar</button>
+                <button id="cookie-settings-save"
+                    style="background-color: #e60000; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Guardar
+                    preferencias</button>
+                <button id="cookie-settings-cancel"
+                    style="background-color: #555; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Cancelar</button>
             </div>
         </div>
     </div>
@@ -190,10 +258,10 @@
         // Año actual automático
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('current-year-2').textContent = new Date().getFullYear();
-        
+
         // Smooth scrolling para enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -205,22 +273,22 @@
         function showCookieBanner() {
             const banner = document.getElementById('cookie-consent-banner');
             const settingsPanel = document.getElementById('cookie-settings-panel');
-            
+
             if (!localStorage.getItem('cookiePreferences')) {
                 banner.style.display = 'block';
             }
-            
-            document.getElementById('cookie-accept-all').addEventListener('click', function() {
+
+            document.getElementById('cookie-accept-all').addEventListener('click', function () {
                 localStorage.setItem('cookiePreferences', 'all');
                 banner.style.display = 'none';
             });
-            
-            document.getElementById('cookie-settings-btn').addEventListener('click', function() {
+
+            document.getElementById('cookie-settings-btn').addEventListener('click', function () {
                 banner.style.display = 'none';
                 settingsPanel.style.display = 'block';
             });
-            
-            document.getElementById('cookie-settings-save').addEventListener('click', function() {
+
+            document.getElementById('cookie-settings-save').addEventListener('click', function () {
                 const analyticsChecked = document.getElementById('analytics-cookies-toggle').checked;
                 const preferences = {
                     necessary: true,
@@ -229,17 +297,18 @@
                 localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
                 settingsPanel.style.display = 'none';
             });
-            
-            document.getElementById('cookie-settings-cancel').addEventListener('click', function() {
+
+            document.getElementById('cookie-settings-cancel').addEventListener('click', function () {
                 settingsPanel.style.display = 'none';
                 banner.style.display = 'block';
             });
         }
-        
+
         // Inicialización cuando el DOM esté cargado
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             showCookieBanner();
         });
     </script>
 </body>
+
 </html>
