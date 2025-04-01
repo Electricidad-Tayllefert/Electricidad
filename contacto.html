@@ -94,10 +94,6 @@
             }
         }
 
-        .g-recaptcha {
-            margin: 20px 0;
-        }
-
         /* NUEVOS ESTILOS PARA BOTONES HORIZONTALES */
         .contacto-rapido {
             display: flex;
@@ -157,6 +153,23 @@
                 width: 100%;
             }
         }
+
+        /* Estilo para el CAPTCHA matemático */
+        .math-captcha {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .math-captcha label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .math-captcha input {
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -189,6 +202,15 @@
             // 4. Protección adicional para imágenes
             document.body.style.userSelect = 'none';
             document.body.style.webkitUserSelect = 'none';
+
+            // Generar números aleatorios para el CAPTCHA
+            const num1 = Math.floor(Math.random() * 5) + 1; // Número entre 1 y 5
+            const num2 = Math.floor(Math.random() * 5) + 1; // Número entre 1 y 5
+            const suma = num1 + num2;
+            
+            document.getElementById('num1').textContent = num1;
+            document.getElementById('num2').textContent = num2;
+            document.getElementById('suma_real').value = suma;
         });
     </script>
     <header>
@@ -231,9 +253,15 @@
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required aria-label="Tu mensaje"></textarea>
 
-                <!-- reCAPTCHA con tus claves actualizadas -->
-                <div class="g-recaptcha" data-sitekey="6LeoLwYrAAAAAAp8J-wT7es3fjl2ollPwzMwr.JyA"></div>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <!-- CAPTCHA Matemático -->
+                <div class="math-captcha">
+                    <label for="captcha">
+                        ¿Cuánto es <span id="num1">5</span> + <span id="num2">3</span>? (Anti-spam)
+                    </label>
+                    <input type="number" id="captcha" name="captcha" required placeholder="Escribe el resultado">
+                    <input type="hidden" id="suma_real" name="suma_real" value="8">
+                </div>
+
                 <button type="submit" id="submit-btn">Enviar Mensaje</button>
             </form>
         </section>
@@ -396,7 +424,6 @@
         </div>
     </div>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         // Año actual automático
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -430,14 +457,6 @@
                 return;
             }
 
-            // Validación del reCAPTCHA
-            if (grecaptcha.getResponse().length === 0) {
-                showMessage('Por favor complete la verificación reCAPTCHA', 'error');
-                btn.disabled = false;
-                btn.innerHTML = 'Enviar Mensaje';
-                return;
-            }
-
             // Envío del formulario
             const formData = new FormData(this);
 
@@ -452,7 +471,13 @@
                 .then(data => {
                     showMessage('Mensaje enviado con éxito. Nos pondremos en contacto pronto.', 'success');
                     document.getElementById('contact-form').reset();
-                    grecaptcha.reset();
+                    
+                    // Regenerar nuevos números para el CAPTCHA
+                    const num1 = Math.floor(Math.random() * 5) + 1;
+                    const num2 = Math.floor(Math.random() * 5) + 1;
+                    document.getElementById('num1').textContent = num1;
+                    document.getElementById('num2').textContent = num2;
+                    document.getElementById('suma_real').value = num1 + num2;
                 })
                 .catch(error => {
                     showMessage('Error al enviar el mensaje. Por favor intente nuevamente.', 'error');
