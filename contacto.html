@@ -9,90 +9,6 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos específicos para el formulario mejorado */
-        #contact-form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 25px;
-            background: #f8f8f8;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #form-message {
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-            display: none;
-        }
-
-        .success-message {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .error-message {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        #contact-form label {
-            display: block;
-            margin: 15px 0 5px;
-            font-weight: bold;
-        }
-
-        #contact-form input,
-        #contact-form select,
-        #contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        #contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        #contact-form button {
-            background-color: #e60000;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            margin-top: 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-
-        #contact-form button:hover {
-            background-color: #c50000;
-        }
-
-        .loader {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
 
         /* NUEVOS ESTILOS PARA BOTONES HORIZONTALES */
         .contacto-rapido {
@@ -154,22 +70,6 @@
             }
         }
 
-        /* Estilo para el CAPTCHA matemático */
-        .math-captcha {
-            margin: 20px 0;
-            padding: 15px;
-            background: #f0f0f0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-        .math-captcha label {
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .math-captcha input {
-            margin-top: 5px;
-        }
     </style>
 </head>
 
@@ -225,46 +125,6 @@
     </header>
 
     <main>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div id="form-message" class="form-message"></div>
-
-            <form id="contact-form" action="procesar-formulario.php" method="post">
-                <input type="hidden" name="destinatario" value="electricidad-tayllefert@hotmail.com">
-
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required aria-label="Tu nombre completo">
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required aria-label="Tu correo electrónico">
-
-                <label for="telefono">Teléfono (opcional):</label>
-                <input type="tel" id="telefono" name="telefono" aria-label="Tu número de teléfono">
-
-                <label for="asunto">Asunto:</label>
-                <select id="asunto" name="asunto" required>
-                    <option value="" disabled selected>Selecciona un asunto</option>
-                    <option value="Consulta general">Consulta general</option>
-                    <option value="Solicitud de presupuesto">Solicitud de presupuesto</option>
-                    <option value="Servicio de urgencia">Servicio de urgencia</option>
-                    <option value="Otro">Otro</option>
-                </select>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required aria-label="Tu mensaje"></textarea>
-
-                <!-- CAPTCHA Matemático -->
-                <div class="math-captcha">
-                    <label for="captcha">
-                        ¿Cuánto es <span id="num1">5</span> + <span id="num2">3</span>? (Anti-spam)
-                    </label>
-                    <input type="number" id="captcha" name="captcha" required placeholder="Escribe el resultado">
-                    <input type="hidden" id="suma_real" name="suma_real" value="8">
-                </div>
-
-                <button type="submit" id="submit-btn">Enviar Mensaje</button>
-            </form>
-        </section>
 
         <!-- SECCIÓN DE BOTONES HORIZONTALES -->
         <div class="contacto-rapido">
