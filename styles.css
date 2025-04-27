@@ -1,7 +1,7 @@
 /* ===== FONDO CON IMAGEN ===== */
 /* ===== FONDO CON IMAGEN ===== */
 body {
-    background-image: url('images/fondo-electricidad.jpg');
+    background-image: url('images/fondo-electricidad.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
