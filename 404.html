@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada – Electricidad Tayllefert</title>
+  <link rel="icon" type="image/png" href="/images/logo.webp">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Redirigir URLs antiguas con .html a las nuevas rutas limpias
+    (function () {
+      var path = window.location.pathname;
+      if (path.endsWith('.html')) {
+        var clean = path.replace(/\.html$/, '/');
+        window.location.replace(clean + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header id="header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <img src="/images/Logo2.webp" alt="Electricidad Tayllefert">
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/#nosotros">Nosotros</a></li>
+          <li><a href="/#proyectos">Proyectos</a></li>
+          <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;text-align:center;padding:40px 24px;">
+    <p style="color:var(--red);font-size:5rem;font-weight:800;line-height:1;margin-bottom:16px;">404</p>
+    <h1 style="color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:16px;">Página no encontrada</h1>
+    <p style="color:#aaa;max-width:420px;line-height:1.7;margin-bottom:36px;">El enlace que has seguido ya no existe o ha cambiado de dirección. Vuelve al inicio o contáctanos.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="/" style="background:var(--red);color:#fff;font-weight:700;padding:13px 30px;border-radius:8px;text-decoration:none;">Volver al inicio</a>
+      <a href="/contacto/" style="border:1px solid rgba(255,255,255,0.15);color:#fff;font-weight:600;padding:13px 30px;border-radius:8px;text-decoration:none;">Contacto</a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('current-year') && (document.getElementById('current-year').textContent = new Date().getFullYear());
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('open'); nav.classList.remove('open'); }));
+  </script>
+</body>
+</html>
