@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Growers Go">
+    <title>Growers Go - Electricidad Tayllefert</title>
+    <link rel="icon" type="image/png" href="../images/logo.webp">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Estilos del carrusel */
+        .carrusel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carrusel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carrusel img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carrusel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(230, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .carrusel-btn:hover {
+            background-color: rgba(230, 0, 0, 0.9);
+        }
+
+        #prevBtn {
+            left: 20px;
+        }
+
+        #nextBtn {
+            right: 20px;
+        }
+
+        .carrusel-indicadores {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicador.active {
+            background-color: #e60000;
+        }
+
+        @media (max-width: 768px) {
+            .carrusel-btn {
+                padding: 10px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Protección avanzada contra descargas
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Bloquear clic derecho
+            document.oncontextmenu = function() {
+                alert('Las imagenes tienen derechos de autor y no se pueden descargar');
+                return false;
+            };
+            
+            // 2. Bloquear arrastre de imágenes
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onmousedown = function() { return false; };
+                img.ondragstart = function() { return false; };
+            });
+            
+            // 3. Desactivar teclas de acceso rápido
+            document.onkeydown = function(e) {
+                // Bloquear Ctrl+Shift+I, Ctrl+U, F12
+                if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 73) || e.keyCode === 123) {
+                    alert('Acceso denegado');
+                    return false;
+                }
+            };
+            
+            // 4. Protección adicional para imágenes
+            document.body.style.userSelect = 'none';
+            document.body.style.webkitUserSelect = 'none';
+        });
+        </script>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="../" class="header-logo">
+        <img src="../images/Logo2.webp" alt="Electricidad Tayllefert">
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="../#servicios">Servicios</a></li>
+          <li><a href="../#nosotros">Nosotros</a></li>
+          <li><a href="../#proyectos">Proyectos</a></li>
+          <li><a href="../contacto/" class="nav-cta">Presupuesto Gratis</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+    <main>
+        <section id="galeria-proyectos" style="padding: calc(var(--header-h, 70px) + 48px) 20px 0; max-width: 1100px; margin: 0 auto;">
+            <p class="section-tag" style="color: var(--red, #d10000); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px;">Proyecto realizado</p>
+            <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin-bottom: 16px;">GrowersGo Boutique Hostel</h1>
+            <p style="color: #aaa; font-size: 1.05rem; max-width: 680px; line-height: 1.7; margin-bottom: 8px;">Instalación eléctrica completa para GrowersGo, el primer hostel boutique anti-estrés de Europa, ubicado en el centro de Huelva. Un espacio singular diseñado con elementos naturales —madera, piedra y plantas— que actualmente ocupa el nº&nbsp;1 de alojamientos en Huelva en TripAdvisor.</p>
+        </section>
+
+        <section style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; color: #ccc; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">Galería del proyecto</h2>
+            <div class="carrusel-container">
+                <div class="carrusel">
+                    <img src="../images/growersgo1.webp" alt="Growers Go - Imagen 1" loading="lazy">
+                    <img src="../images/growersgo2.webp" alt="Growers Go - Imagen 2" loading="lazy">
+                    <img src="../images/growersgo3.webp" alt="Growers Go - Imagen 3" loading="lazy">
+                    <img src="../images/growersgo4.webp" alt="Growers Go - Imagen 4" loading="lazy">
+                    <img src="../images/growersgo5.webp" alt="Growers Go - Imagen 5" loading="lazy">
+                    <img src="../images/growersgo6.webp" alt="Growers Go - Imagen 6" loading="lazy">
+                    <img src="../images/growersgo7.webp" alt="Growers Go - Imagen 7" loading="lazy">
+                    <img src="../images/growersgo8.webp" alt="Growers Go - Imagen 8" loading="lazy">
+                    <img src="../images/growersgo9.webp" alt="Growers Go - Imagen 9" loading="lazy">
+                </div>
+                <button class="carrusel-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+                <button class="carrusel-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+                <div class="carrusel-indicadores" id="indicadores"></div>
+            </div>
+        </section>
+
+        <!-- Detalles del proyecto -->
+        <section style="max-width: 1100px; margin: 60px auto 0; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 60px;">
+                <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-lightning-charge-fill"></i></span>
+                    <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Instalación eléctrica completa</h3>
+                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Diseño y montaje del cuadro general, circuitos de habitaciones, zonas comunes, terraza, spa urbano y rooftop del hostel.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-file-earmark-check-fill"></i></span>
+                    <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Certificado oficial</h3>
+                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Tramitación del certificado eléctrico ante la Junta de Andalucía, con toda la documentación en regla para la apertura del establecimiento.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-buildings-fill"></i></span>
+                    <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Hostel boutique en el centro de Huelva</h3>
+                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">16 habitaciones, spa urbano, terraza rooftop y zonas de coworking. Actualmente nº&nbsp;1 en TripAdvisor entre los alojamientos de Huelva.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="background: rgba(209,0,0,0.07); border-top: 1px solid rgba(209,0,0,0.15); border-bottom: 1px solid rgba(209,0,0,0.15); padding: 64px 20px; text-align: center; margin-bottom: 0;">
+            <p style="color: var(--red, #d10000); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px;">¿Tienes un proyecto similar?</p>
+            <h2 style="color: #fff; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 16px;">Pídenos presupuesto sin compromiso</h2>
+            <p style="color: #aaa; max-width: 520px; margin: 0 auto 32px; line-height: 1.7;">Realizamos instalaciones eléctricas para locales, naves y empresas en Huelva y provincia. Instaladores autorizados por la Junta de Andalucía.</p>
+            <a href="../contacto/" style="display: inline-block; background: var(--red, #d10000); color: #fff; font-weight: 700; padding: 14px 36px; border-radius: 6px; text-decoration: none; font-size: 1rem; letter-spacing: 0.02em;">Solicitar presupuesto gratis</a>
+        </section>
+    </main>
+
+    <!-- Resto de tu código HTML (footer, cookies, etc.) se mantiene igual -->
+
+    <script>
+        // Carrusel de imágenes
+        document.addEventListener('DOMContentLoaded', function () {
+            const carrusel = document.querySelector('.carrusel');
+            const images = document.querySelectorAll('.carrusel img');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicadores = document.getElementById('indicadores');
+
+            let currentIndex = 0;
+            const imageWidth = 100; // Porcentaje
+
+            // Crear indicadores
+            images.forEach((_, index) => {
+                const indicador = document.createElement('div');
+                indicador.classList.add('indicador');
+                if (index === 0) indicador.classList.add('active');
+                indicador.addEventListener('click', () => {
+                    goToImage(index);
+                });
+                indicadores.appendChild(indicador);
+            });
+
+            // Función para mover el carrusel
+            function goToImage(index) {
+                currentIndex = index;
+                carrusel.style.transform = `translateX(-${currentIndex * imageWidth}%)`;
+
+                // Actualizar indicadores
+                document.querySelectorAll('.indicador').forEach((ind, i) => {
+                    ind.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            // Eventos para botones
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                goToImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                goToImage(currentIndex);
+            });
+
+            // Autoavance cada 5 segundos
+            let interval = setInterval(() => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                goToImage(currentIndex);
+            }, 5000);
+
+            // Pausar autoavance al interactuar
+            carrusel.addEventListener('mouseenter', () => clearInterval(interval));
+            carrusel.addEventListener('mouseleave', () => {
+                interval = setInterval(() => {
+                    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                    goToImage(currentIndex);
+                }, 5000);
+            });
+        });
+    </script>
+    <footer style="background-color: #222; color: #fff; padding: 40px 0 20px; font-size: 0.9em;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Electricidad Tayllefert</h3>
+                    <p style="line-height: 1.6;">Servicios profesionales de instalaciones eléctricas, reparaciones y
+                        mantenimiento para hogares y empresas.</p>
+                </div>
+
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Contacto</h3>
+                    <p style="margin-bottom: 8px;">📞 <a href="tel:+34655941737"
+                            style="color: #fff; text-decoration: none;">+34 655 941 737</a></p>
+                    <p style="margin-bottom: 8px;">📧 <a href="mailto:electricidad-tayllefert@hotmail.com"
+                            style="color: #fff; text-decoration: none;">electricidad-tayllefert@hotmail.com</a></p>
+                    <p style="margin-bottom: 8px;">📍 <a href="https://maps.app.goo.gl/v6XdrA2tySVho1jQ9"
+                            target="_blank" style="color: #fff; text-decoration: none;">C. Chucena, 3, 21005 Huelva</a>
+                    </p>
+                    <p style="margin-bottom: 8px;">⭐ <a href="https://g.page/r/CddtGCKO_r5LEBM/review"
+                            style="color: #fff; text-decoration: none;">Valóranos</a></p>
+                </div>
+
+
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Horario</h3>
+                    <p style="margin-bottom: 8px;">Lunes a Viernes: 8:00 - 20:00</p>
+                </div>
+
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="color: #e60000; margin-bottom: 15px; font-size: 1.2em;">Legal</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 1.6;">
+                        <li><a href="../politicas-privacidad/" style="color: #fff; text-decoration: none;">Política de
+                                Privacidad</a></li>
+                        <li><a href="../aviso-legal/" style="color: #fff; text-decoration: none;">Aviso Legal</a></li>
+                        <li><a href="../cookies/" style="color: #fff; text-decoration: none;">Política de Cookies</a>
+                        </li>
+                        <li><a href="../terminos-servicio/" style="color: #fff; text-decoration: none;">Términos de
+                                Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
+                <p style="margin-bottom: 15px;">&copy; <span id="current-year"></span> Electricidad Tayllefert - Todos
+                    los derechos reservados</p>
+
+                <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+                    <a href="https://wa.me/34655941737" style="color: #fff; font-size: 1.5em;" aria-label="WhatsApp"
+                        target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.google.com/maps/@37.2682112,-6.939468,3a,75y,255.47h,87.04t/data=!3m7!1e1!3m5!1sZnN2tiLUSQuouxl1zqoXiw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.9621145295138547%26panoid%3DZnN2tiLUSQuouxl1zqoXiw%26yaw%3D255.47492084003775!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" style="color: #fff; font-size: 1.5em;"
+                        aria-label="Google Maps" target="_blank" rel="noopener"><i class="bi bi-geo-alt-fill"></i></a>
+                    <a href="https://g.page/r/CddtGCKO_r5LEBM/review" style="color: #fff; font-size: 1.5em;"
+                        aria-label="Valóranos" target="_blank" rel="noopener"><i class="bi bi-star-fill"></i></a>
+                </div>
+
+                <p style="font-size: 0.8em; color: #aaa; max-width: 800px; margin: 0 auto;">
+                    Electricidad Tayllefert © <span id="current-year-2"></span> es una empresa registrada en Huelva con
+                    certificados y seguros conforme a la legislación vigente.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Banner de Cookies -->
+    <div id="cookie-consent-banner"
+        style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #333; color: #fff; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
+        <div
+            style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
+            <div style="flex: 1; min-width: 250px; text-align: left;">
+                <p style="margin: 0;">Utilizamos cookies esenciales y de análisis para mejorar nuestro sitio web. Al
+                    continuar navegando, aceptas su uso.</p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <button id="cookie-accept-all"
+                    style="background-color: #e60000; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Aceptar
+                    todas</button>
+                <button id="cookie-settings-btn"
+                    style="background-color: #555; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; white-space: nowrap;">Configurar</button>
+                <a href="../cookies/"
+                    style="color: #e60000; text-decoration: none; padding: 8px 20px; white-space: nowrap;">Más
+                    información</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de Configuración de Cookies -->
+    <div id="cookie-settings-panel"
+        style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #f5f5f5; color: #333; padding: 20px; z-index: 10000; max-height: 80vh; overflow-y: auto; box-shadow: 0 -2px 15px rgba(0,0,0,0.3);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h3 style="color: #e60000; margin-bottom: 20px; text-align: center;">Configuración de Cookies</h3>
+
+            <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div>
+                        <strong style="display: block;">Cookies técnicas</strong>
+                        <small style="color: #666;">Siempre activas</small>
+                    </div>
+                    <span
+                        style="background-color: #e60000; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em;">Obligatorias</span>
+                </div>
+                <p style="font-size: 0.9em; color: #666; margin: 0;">Estas cookies son necesarias para el funcionamiento
+                    básico del sitio web.</p>
+            </div>
+
+            <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div>
+                        <strong style="display: block;">Cookies de análisis</strong>
+                        <small style="color: #666;">Google Analytics</small>
+                    </div>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="analytics-cookies-toggle" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p style="font-size: 0.9em; color: #666; margin: 0;">Nos ayudan a entender cómo interactúan los usuarios
+                    con nuestro sitio web.</p>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <button id="cookie-settings-save"
+                    style="background-color: #e60000; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Guardar
+                    preferencias</button>
+                <button id="cookie-settings-cancel"
+                    style="background-color: #555; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; min-width: 150px;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Año actual automático
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('current-year-2').textContent = new Date().getFullYear();
+
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Gestión de cookies
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const settingsPanel = document.getElementById('cookie-settings-panel');
+
+            if (!localStorage.getItem('cookiePreferences')) {
+                banner.style.display = 'block';
+            }
+
+            document.getElementById('cookie-accept-all').addEventListener('click', function () {
+                localStorage.setItem('cookiePreferences', 'all');
+                banner.style.display = 'none';
+            });
+
+            document.getElementById('cookie-settings-btn').addEventListener('click', function () {
+                banner.style.display = 'none';
+                settingsPanel.style.display = 'block';
+            });
+
+            document.getElementById('cookie-settings-save').addEventListener('click', function () {
+                const analyticsChecked = document.getElementById('analytics-cookies-toggle').checked;
+                const preferences = {
+                    necessary: true,
+                    analytics: analyticsChecked
+                };
+                localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                settingsPanel.style.display = 'none';
+            });
+
+            document.getElementById('cookie-settings-cancel').addEventListener('click', function () {
+                settingsPanel.style.display = 'none';
+                banner.style.display = 'block';
+            });
+        }
+
+        // Inicialización cuando el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', function () {
+            showCookieBanner();
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Hamburger menu
+        const toggle = document.getElementById('menu-toggle');
+        const nav    = document.getElementById('main-nav');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                toggle.classList.remove('open');
+                nav.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+
+</html>
