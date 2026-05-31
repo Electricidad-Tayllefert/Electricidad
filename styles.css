@@ -747,7 +747,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 .footer-social a i { font-size: 1.05rem; color: var(--muted); transition: color 0.2s; }
 .footer-social a:hover i { color: var(--white); }
 
-.footer-col h4 {
+.footer-col h3 {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -784,7 +784,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 .footer-bottom p {
   text-align: center;
   font-size: 0.8rem;
-  color: #444;
+  color: var(--muted);
 }
 
 /* ===== WHATSAPP FLOAT ===== */
