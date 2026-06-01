@@ -1,6 +1,9 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Bootstrap Icons SVG replacement */
+svg.bi { display:inline-block; width:1em; height:1em; fill:currentColor; vertical-align:-0.125em; flex-shrink:0; }
+
 :root {
   --red:       #d10000;
   --red-dark:  #a00000;

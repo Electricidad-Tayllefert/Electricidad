@@ -7,9 +7,6 @@
     <meta name="description" content="Proyecto Growers Go">
     <title>Growers Go - Electricidad Tayllefert</title>
     <link rel="icon" type="image/png" href="../images/logo.webp">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../styles.css">
     <style>
         /* Estilos del carrusel */
@@ -91,6 +88,16 @@
 </head>
 
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></symbol>
+  <symbol id="bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></symbol>
+  <symbol id="bi-lightning-charge-fill" viewBox="0 0 16 16"><path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/></symbol>
+  <symbol id="bi-file-earmark-check-fill" viewBox="0 0 16 16"><path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708"/></symbol>
+  <symbol id="bi-buildings-fill" viewBox="0 0 16 16"><path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/></symbol>
+  <symbol id="bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></symbol>
+  <symbol id="bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></symbol>
+  <symbol id="bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></symbol>
+</svg>
     <script>
         // Protección avanzada contra descargas
         document.addEventListener('DOMContentLoaded', function() {
@@ -162,8 +169,8 @@
                     <img src="../images/growersgo8.webp" alt="Growers Go - Imagen 8" loading="lazy">
                     <img src="../images/growersgo9.webp" alt="Growers Go - Imagen 9" loading="lazy">
                 </div>
-                <button class="carrusel-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-                <button class="carrusel-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+                <button class="carrusel-btn" id="prevBtn"><svg class="bi" aria-hidden="true"><use href="#bi-chevron-left"/></svg></button>
+                <button class="carrusel-btn" id="nextBtn"><svg class="bi" aria-hidden="true"><use href="#bi-chevron-right"/></svg></button>
                 <div class="carrusel-indicadores" id="indicadores"></div>
             </div>
         </section>
@@ -172,17 +179,17 @@
         <section style="max-width: 1100px; margin: 60px auto 0; padding: 0 20px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 60px;">
                 <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
-                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-lightning-charge-fill"></i></span>
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><svg class="bi" aria-hidden="true"><use href="#bi-lightning-charge-fill"/></svg></span>
                     <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Instalación eléctrica completa</h3>
                     <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Diseño y montaje del cuadro general, circuitos de habitaciones, zonas comunes, terraza, spa urbano y rooftop del hostel.</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
-                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-file-earmark-check-fill"></i></span>
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><svg class="bi" aria-hidden="true"><use href="#bi-file-earmark-check-fill"/></svg></span>
                     <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Certificado oficial</h3>
                     <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Tramitación del certificado eléctrico ante la Junta de Andalucía, con toda la documentación en regla para la apertura del establecimiento.</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px;">
-                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><i class="bi bi-buildings-fill"></i></span>
+                    <span style="display: block; color: var(--red, #d10000); font-size: 1.6rem; margin-bottom: 12px;"><svg class="bi" aria-hidden="true"><use href="#bi-buildings-fill"/></svg></span>
                     <h3 style="color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Hostel boutique en el centro de Huelva</h3>
                     <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">16 habitaciones, spa urbano, terraza rooftop y zonas de coworking. Actualmente nº&nbsp;1 en TripAdvisor entre los alojamientos de Huelva.</p>
                 </div>
@@ -310,11 +317,11 @@
 
                 <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
                     <a href="https://wa.me/34655941737" style="color: #fff; font-size: 1.5em;" aria-label="WhatsApp"
-                        target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+                        target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-whatsapp"/></svg></a>
                     <a href="https://www.google.com/maps/@37.2682112,-6.939468,3a,75y,255.47h,87.04t/data=!3m7!1e1!3m5!1sZnN2tiLUSQuouxl1zqoXiw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.9621145295138547%26panoid%3DZnN2tiLUSQuouxl1zqoXiw%26yaw%3D255.47492084003775!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" style="color: #fff; font-size: 1.5em;"
-                        aria-label="Google Maps" target="_blank" rel="noopener"><i class="bi bi-geo-alt-fill"></i></a>
+                        aria-label="Google Maps" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-geo-alt-fill"/></svg></a>
                     <a href="https://g.page/r/CddtGCKO_r5LEBM/review" style="color: #fff; font-size: 1.5em;"
-                        aria-label="Valóranos" target="_blank" rel="noopener"><i class="bi bi-star-fill"></i></a>
+                        aria-label="Valóranos" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-star-fill"/></svg></a>
                 </div>
 
                 <p style="font-size: 0.8em; color: #aaa; max-width: 800px; margin: 0 auto;">

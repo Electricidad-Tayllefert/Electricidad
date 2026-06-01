@@ -167,15 +167,28 @@
   <link rel="icon" type="image/png" href="images/logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="bi-lightning-charge-fill" viewBox="0 0 16 16"><path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/></symbol>
+  <symbol id="bi-telephone-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/></symbol>
+  <symbol id="bi-clock-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/></symbol>
+  <symbol id="bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></symbol>
+  <symbol id="bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></symbol>
+  <symbol id="bi-award-fill" viewBox="0 0 16 16"><path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z"/><path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/></symbol>
+  <symbol id="bi-shield-fill-check" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z"/></symbol>
+  <symbol id="bi-cash-coin" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/><path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/><path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/><path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/></symbol>
+  <symbol id="bi-file-earmark-check-fill" viewBox="0 0 16 16"><path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708"/></symbol>
+  <symbol id="bi-buildings-fill" viewBox="0 0 16 16"><path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/></symbol>
+  <symbol id="bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></symbol>
+  <symbol id="bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></symbol>
+  <symbol id="bi-lightbulb" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/></symbol>
+  <symbol id="bi-lightbulb-fill" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"/></symbol>
+</svg>
 
   <!-- ===== IMAGE PROTECTION ===== -->
   <script>
@@ -224,17 +237,17 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-badge"><i class="bi bi-lightning-charge-fill"></i> Instaladores Autorizados · Huelva y Provincia</span>
+      <span class="hero-badge"><svg class="bi" aria-hidden="true"><use href="#bi-lightning-charge-fill"/></svg> Instaladores Autorizados · Huelva y Provincia</span>
       <h1>Electricistas en Huelva<br><span class="hero-accent">de Confianza</span></h1>
       <p class="hero-desc">Instalaciones, reparaciones de averías, mantenimiento y certificados eléctricos en Huelva. Trabajo profesional.</p>
       <div class="hero-actions">
-        <a href="tel:+34655941737" class="btn-primary btn-lg"><i class="bi bi-telephone-fill"></i> Llamar Ahora</a>
+        <a href="tel:+34655941737" class="btn-primary btn-lg"><svg class="bi" aria-hidden="true"><use href="#bi-telephone-fill"/></svg> Llamar Ahora</a>
         <a href="contacto/" class="btn-outline btn-lg">Solicitar Presupuesto</a>
       </div>
       <div class="hero-meta">
-        <span><i class="bi bi-telephone-fill"></i> +34 655 941 737</span>
-        <span><i class="bi bi-clock-fill"></i> Lun–Vie&nbsp;8:00–20:00</span>
-        <span><i class="bi bi-geo-alt-fill"></i> C. Chucena 3, Huelva</span>
+        <span><svg class="bi" aria-hidden="true"><use href="#bi-telephone-fill"/></svg> +34 655 941 737</span>
+        <span><svg class="bi" aria-hidden="true"><use href="#bi-clock-fill"/></svg> Lun–Vie&nbsp;8:00–20:00</span>
+        <span><svg class="bi" aria-hidden="true"><use href="#bi-geo-alt-fill"/></svg> C. Chucena 3, Huelva</span>
       </div>
     </div>
     <a href="#stats" class="hero-scroll" aria-label="Desplazarse hacia abajo">
@@ -324,21 +337,21 @@
       <div class="container">
         <div class="strip-info">
           <div class="strip-item">
-            <span class="strip-item-icon"><i class="bi bi-telephone-fill"></i></span>
+            <span class="strip-item-icon"><svg class="bi" aria-hidden="true"><use href="#bi-telephone-fill"/></svg></span>
             <div class="strip-item-text">
               <strong>+34 655 941 737</strong>
               <span>Llamadas y WhatsApp</span>
             </div>
           </div>
           <div class="strip-item">
-            <span class="strip-item-icon"><i class="bi bi-envelope-fill"></i></span>
+            <span class="strip-item-icon"><svg class="bi" aria-hidden="true"><use href="#bi-envelope-fill"/></svg></span>
             <div class="strip-item-text">
               <strong>electricidad-tayllefert@hotmail.com</strong>
               <span>Escríbenos por email</span>
             </div>
           </div>
           <div class="strip-item">
-            <span class="strip-item-icon"><i class="bi bi-clock-fill"></i></span>
+            <span class="strip-item-icon"><svg class="bi" aria-hidden="true"><use href="#bi-clock-fill"/></svg></span>
             <div class="strip-item-text">
               <strong>Lunes a Viernes</strong>
               <span>8:00 – 20:00</span>
@@ -362,32 +375,32 @@
         </div>
         <div class="why-grid">
           <div class="why-card fade-up">
-            <span class="why-icon"><i class="bi bi-award-fill"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-award-fill"/></svg></span>
             <h3>Instaladores Autorizados</h3>
             <p>Empresa registrada con todos los certificados y seguros exigidos por la legislación española vigente. Trabajamos con plenas garantías legales.</p>
           </div>
           <div class="why-card fade-up" style="transition-delay:0.1s">
-            <span class="why-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-lightning-charge-fill"/></svg></span>
             <h3>Respuesta Rápida</h3>
             <p>Atendemos urgencias eléctricas con la máxima rapidez posible para minimizar el impacto en tu hogar o negocio.</p>
           </div>
           <div class="why-card fade-up" style="transition-delay:0.2s">
-            <span class="why-icon"><i class="bi bi-shield-fill-check"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-shield-fill-check"/></svg></span>
             <h3>Trabajo de Calidad</h3>
             <p>Realizamos cada instalación con los más altos estándares de calidad y seguridad. Tu tranquilidad es nuestra prioridad.</p>
           </div>
           <div class="why-card fade-up" style="transition-delay:0.0s">
-            <span class="why-icon"><i class="bi bi-cash-coin"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-cash-coin"/></svg></span>
             <h3>Sin Sorpresas</h3>
             <p>Presupuesto detallado antes de empezar. El precio acordado es el precio final, sin costes ocultos.</p>
           </div>
           <div class="why-card fade-up" style="transition-delay:0.1s">
-            <span class="why-icon"><i class="bi bi-file-earmark-check-fill"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-file-earmark-check-fill"/></svg></span>
             <h3>Certificación Oficial</h3>
             <p>Emitimos documentación oficial reconocida por la Junta de Andalucía y las distribuidoras eléctricas para todos los trámites que necesites.</p>
           </div>
           <div class="why-card fade-up" style="transition-delay:0.2s">
-            <span class="why-icon"><i class="bi bi-buildings-fill"></i></span>
+            <span class="why-icon"><svg class="bi" aria-hidden="true"><use href="#bi-buildings-fill"/></svg></span>
             <h3>Hogares y Empresas</h3>
             <p>Trabajamos tanto para particulares como para negocios, comercios, comunidades de vecinos e industrias de cualquier tamaño.</p>
           </div>
@@ -627,9 +640,9 @@
           <h2>¿Necesitas un Electricista?</h2>
           <p>Llámanos ahora o escríbenos y te damos solución hoy mismo. Llámanos o escríbenos para cualquier trabajo eléctrico en Huelva y provincia.</p>
           <div class="cta-actions">
-            <a href="tel:+34655941737" class="btn-primary btn-lg"><i class="bi bi-telephone-fill"></i> +34 655 941 737</a>
-            <a href="https://wa.me/34655941737" class="btn-green btn-lg" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-            <a href="contacto/" class="btn-ghost btn-lg"><i class="bi bi-envelope-fill"></i> Enviar Mensaje</a>
+            <a href="tel:+34655941737" class="btn-primary btn-lg"><svg class="bi" aria-hidden="true"><use href="#bi-telephone-fill"/></svg> +34 655 941 737</a>
+            <a href="https://wa.me/34655941737" class="btn-green btn-lg" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-whatsapp"/></svg> WhatsApp</a>
+            <a href="contacto/" class="btn-ghost btn-lg"><svg class="bi" aria-hidden="true"><use href="#bi-envelope-fill"/></svg> Enviar Mensaje</a>
           </div>
           <p class="cta-note">Lunes a Viernes · 8:00–20:00 · C. Chucena 3, Huelva</p>
         </div>
@@ -648,16 +661,16 @@
           <p>Electricistas profesionales en Huelva. Instalaciones, reparaciones y mantenimiento con certificación oficial conforme a la legislación vigente.</p>
           <div class="footer-social">
             <a href="https://wa.me/34655941737" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <i class="bi bi-whatsapp"></i>
+              <svg class="bi" aria-hidden="true"><use href="#bi-whatsapp"/></svg>
             </a>
             <a href="https://www.google.com/maps/@37.2682112,-6.939468,3a,75y,255.47h,87.04t/data=!3m7!1e1!3m5!1sZnN2tiLUSQuouxl1zqoXiw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.9621145295138547%26panoid%3DZnN2tiLUSQuouxl1zqoXiw%26yaw%3D255.47492084003775!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" aria-label="Google Maps">
-              <i class="bi bi-geo-alt-fill"></i>
+              <svg class="bi" aria-hidden="true"><use href="#bi-geo-alt-fill"/></svg>
             </a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Servicios</h4>
+          <h3>Servicios</h3>
           <ul>
             <li><a href="#servicios">Instalaciones Eléctricas</a></li>
             <li><a href="#servicios">Reparación de Averías</a></li>
@@ -667,18 +680,18 @@
         </div>
 
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h3>Contacto</h3>
           <ul class="footer-contact">
-            <li><a href="tel:+34655941737"><i class="bi bi-telephone-fill"></i> +34 655 941 737</a></li>
-            <li><a href="mailto:electricidad-tayllefert@hotmail.com"><i class="bi bi-envelope-fill"></i> electricidad-tayllefert@hotmail.com</a></li>
-            <li><a href="https://maps.app.goo.gl/v6XdrA2tySVho1jQ9" target="_blank" rel="noopener"><i class="bi bi-geo-alt-fill"></i> C. Chucena, 3, 21005 Huelva</a></li>
-            <li><i class="bi bi-clock-fill"></i> Lunes a Viernes: 8:00–20:00</li>
-            <li><a href="https://g.page/r/CddtGCKO_r5LEBM/review" target="_blank" rel="noopener"><i class="bi bi-star-fill"></i> Déjanos tu valoración</a></li>
+            <li><a href="tel:+34655941737"><svg class="bi" aria-hidden="true"><use href="#bi-telephone-fill"/></svg> +34 655 941 737</a></li>
+            <li><a href="mailto:electricidad-tayllefert@hotmail.com"><svg class="bi" aria-hidden="true"><use href="#bi-envelope-fill"/></svg> electricidad-tayllefert@hotmail.com</a></li>
+            <li><a href="https://maps.app.goo.gl/v6XdrA2tySVho1jQ9" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-geo-alt-fill"/></svg> C. Chucena, 3, 21005 Huelva</a></li>
+            <li><svg class="bi" aria-hidden="true"><use href="#bi-clock-fill"/></svg> Lunes a Viernes: 8:00–20:00</li>
+            <li><a href="https://g.page/r/CddtGCKO_r5LEBM/review" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#bi-star-fill"/></svg> Déjanos tu valoración</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h3>Legal</h3>
           <ul>
             <li><a href="politicas-privacidad/">Política de Privacidad</a></li>
             <li><a href="aviso-legal/">Aviso Legal</a></li>
@@ -702,7 +715,7 @@
       <circle class="sb-track" cx="22" cy="22" r="18"/>
       <circle class="sb-ring" id="sb-ring" cx="22" cy="22" r="18"/>
     </svg>
-    <i class="bi bi-lightbulb" id="sb-icon"></i>
+    <svg class="bi" id="sb-icon" aria-hidden="true"><use href="#bi-lightbulb"/></svg>
   </div>
 
   <!-- ===== WHATSAPP FLOAT ===== -->
@@ -845,6 +858,9 @@
       const GAP   = 20;
       let page    = 0;
       let timer;
+      let _cardW  = 0;
+
+      function getCardW() { return _cardW || (_cardW = cards[0].offsetWidth + GAP); }
 
       function visible() {
         if (window.innerWidth >= 1024) return 3;
@@ -859,7 +875,7 @@
         const total  = pages();
         page = Math.max(0, Math.min(p, total - 1));
 
-        const cardW  = cards[0].offsetWidth + GAP;
+        const cardW  = getCardW();
         track.style.transform = `translateX(-${page * vis * cardW}px)`;
 
         prevBtn.disabled = page === 0;
@@ -899,7 +915,7 @@
         if (Math.abs(diff) > 50) { goTo(diff > 0 ? page + 1 : page - 1); resetTimer(); }
       }, { passive: true });
 
-      window.addEventListener('resize', () => { page = 0; buildDots(); goTo(0); });
+      window.addEventListener('resize', () => { _cardW = 0; page = 0; buildDots(); goTo(0); }, { passive: true });
 
       buildDots();
       goTo(0);
@@ -948,7 +964,7 @@
 
         const lit = pct >= 0.5;
         wrap.classList.toggle('lit', lit);
-        icon.className = lit ? 'bi bi-lightbulb-fill' : 'bi bi-lightbulb';
+        icon.querySelector('use').setAttribute('href', lit ? '#bi-lightbulb-fill' : '#bi-lightbulb');
       }, { passive: true });
 
       wrap.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
