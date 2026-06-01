@@ -832,7 +832,7 @@ footer { background: #090909; border-top: 1px solid var(--border); }
   transform: scale(1);
   pointer-events: auto;
 }
-#scroll-bulb-wrap svg {
+#scroll-bulb-wrap svg:not(#sb-icon) {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -862,12 +862,12 @@ footer { background: #090909; border-top: 1px solid var(--border); }
 }
 #scroll-bulb-wrap.lit #sb-icon {
   color: #ffe066;
-  text-shadow: 0 0 8px #ffe066, 0 0 20px #ffaa00, 0 0 40px rgba(255,170,0,0.4);
+  filter: drop-shadow(0 0 6px #ffe066) drop-shadow(0 0 14px #ffaa00);
   animation: bulb-pulse 1.8s ease-in-out infinite;
 }
 @keyframes bulb-pulse {
-  0%, 100% { text-shadow: 0 0 8px #ffe066, 0 0 20px #ffaa00, 0 0 40px rgba(255,170,0,0.4); }
-  50%       { text-shadow: 0 0 14px #ffe066, 0 0 32px #ffaa00, 0 0 60px rgba(255,170,0,0.6); }
+  0%, 100% { filter: drop-shadow(0 0 6px #ffe066) drop-shadow(0 0 14px #ffaa00); }
+  50%       { filter: drop-shadow(0 0 10px #ffe066) drop-shadow(0 0 24px #ffaa00); }
 }
 
 /* ===== COOKIE TOGGLE ===== */
